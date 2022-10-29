@@ -15,16 +15,12 @@ class Employee(models.Model):
     )
 
 
-# Create your models here.
-
-
 class Home(models.Model):
     address = models.CharField(
         max_length=100, help_text="Введите адрес дома", verbose_name="Адрес дома"
     )
     number_of_floors = models.IntegerField(
-        help_text="Введите этажность дома",
-        verbose_name="Этажность дома",
+        help_text="Введите этажность дома", verbose_name="Этажность дома",
     )
 
 
@@ -37,14 +33,12 @@ class Duty(models.Model):
         on_delete=models.CASCADE,
         help_text=" Выберите дом для дежурства",
         verbose_name="Дом для дежурства",
-        null=True,
     )
     employee_id = models.ForeignKey(
         "Employee",
         on_delete=models.CASCADE,
         help_text=" Выберите сотрудника для дежурства",
         verbose_name="Сотрудник для дежурства",
-        null=True,
     )
     date_of_duty = models.DateField(
         help_text="Введите дату дежурства",
